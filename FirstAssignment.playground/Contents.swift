@@ -92,6 +92,11 @@ for index in 0..<orders.count{
   orders[index].calculateCost()
 }
 
+// We displayed our order summary via looping over them
+orders.forEach{
+  print($0.displayOrderSummary())
+}
+
 print(orders.count) // printed number of elements in our array
 orders.removeAll() // removed all items in our array
 print(orders.count) // printed number of elements in our array
@@ -153,6 +158,12 @@ class News{
     }
   }
   
+  // As we set the title variable private we need a function to set its value
+  func setNewsTitle(_ title: String){ self.title = title }
+  // As we set the title of the new private we need a function to get its value
+  func getNewsTitle() -> String{ title }
   
-  
+  // As we set the title variable private we need a function to set its value
+  func setCategory(_ category: NewsCategory){ self.category = category }
 }
+
