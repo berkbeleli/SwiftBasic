@@ -176,7 +176,6 @@ class News{
   func setNewsTitle(_ title: String){ self.title = title }
   // As we set the title of the new private we need a function to get its value
   func getNewsTitle() -> String{ title }
-  
   // As we set the title variable private we need a function to set its value
   func setCategory(_ category: NewsCategory){ self.category = category }
 }
@@ -209,3 +208,10 @@ var anotherOrder = chocolateOrder // "Struct" pass by value
 print(CupcakeOrder.cakeTypes[chocolateOrder.type]) // our old type of cake
 anotherOrder.type = 3
 print(CupcakeOrder.cakeTypes[chocolateOrder.type]) // as we can see our type is same
+
+// MARK: - Definition fierceEnemies dictionary
+var fierceEnemies: [String: String] = [:] // created an empty dictionary
+fierceEnemies["Tom"] = "Jerry" // Adding new dictionary item
+fierceEnemies["Gargamel"] = "Smurfs" // Adding new dictionary item
+fierceEnemies["Megatron"] = "Autobot" // Adding new dictionary item
+print(fierceEnemies["Tom", default: "Unknown"]) // if value of Tom is empty this line will return Unknown
