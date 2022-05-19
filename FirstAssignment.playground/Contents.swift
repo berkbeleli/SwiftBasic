@@ -87,3 +87,8 @@ orders.append(CupcakeOrder(type: 2, quantity: 5, addSprinkles: true))
 orders.append(CupcakeOrder(type: 1, quantity: 2, addSprinkles: false))
 orders.append(CupcakeOrder(type: 7, quantity: 6, addSprinkles: true))
 orders.sort{ $0.type < $1.type } // sort our orders array according to their type
+
+// We calculated every single element's cost in our array via looping over them
+for index in 0..<orders.count{
+  orders[index].calculateCost()
+}
