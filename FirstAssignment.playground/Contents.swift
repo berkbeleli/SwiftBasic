@@ -35,12 +35,10 @@ struct CupcakeOrder{
     
     self.cost = Double(quantity) * 2
     self.cost! += (Double(type) / 2)
-    
     //0.50$ for sprinkles
     if addSprinkles{
       self.cost! += Double(quantity) / 2
     }
-    
   }
   
   /// <#Description#>
@@ -182,3 +180,16 @@ var defaultNew = News("Default New Type")
 allNews.append(defaultNew)
 allNews.forEach { print($0.getCategoryType()) }
 
+/* The next 10 lines of code demonstrate the main difference between struct and class we create an
+ copy of our foreignNew instance but as we set title of created new instance the title of our
+ foreignNew will change as well cause in class we pass by reference but in struct pass by value */
+var anotherNew = foreignNew // "Class" pass by reference
+foreignNew.getNewsTitle()
+anotherNew.setNewsTitle("Foreign New")
+foreignNew.getNewsTitle() // as we can see our title changed as well
+
+var chocolateOrder = CupcakeOrder(type: 2, quantity: 5, addSprinkles: true)
+var anotherOrder = chocolateOrder // "Struct" pass by value
+print(CupcakeOrder.cakeTypes[chocolateOrder.type]) // our old type of cake
+anotherOrder.type = 3
+print(CupcakeOrder.cakeTypes[chocolateOrder.type]) // as we can see our type is same
