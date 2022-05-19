@@ -82,6 +82,16 @@ struct CupcakeOrder{
       return "Something went wrong try again"
     }
   }
+  
+  /// <#Description#>
+  /// This function changes the value of quantity according to the given new quantity
+  ///
+  ///  ```
+  /// var firstOrder = CupcakeOrder(type: 1, quantity: 4, addSprinkles: false)
+  /// firstOrder.modifyQuantity(8)
+  /// ```
+  /// - Parameter quantity: The quantity value for new quantity of the order
+  mutating func modifyQuantity(_ quantity: Int){ self.quantity = quantity }
 }
 
 var orders: [CupcakeOrder] = [] // create an array of CupcakeOrder to keep our all orders
@@ -90,7 +100,7 @@ orders.append(CupcakeOrder(type: 2, quantity: 5, addSprinkles: true))
 orders.append(CupcakeOrder(type: 1, quantity: 2, addSprinkles: false))
 orders.append(CupcakeOrder(type: 7, quantity: 6, addSprinkles: true))
 orders.sort{ $0.type < $1.type } // sort our orders array according to their type
-
+orders[1].modifyQuantity(7)  // called modifyQuantity function to change quantity value
 // We calculated every single element's cost in our array via looping over them
 for index in 0..<orders.count{
   orders[index].calculateCost()
