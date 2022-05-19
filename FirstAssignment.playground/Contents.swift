@@ -14,10 +14,16 @@ import UIKit
 struct CupcakeOrder{
   static let cakeTypes = ["Vanilla", "Strawberry", "Chocolate", "Rainbow", "Hazelnut"]
   var type: Int
-  var quantity: Int?
-  var addSprinkles = false // set default value of addSprinkles to false
+  private var quantity: Int?
+  var addSprinkles: Bool // set default value of addSprinkles to false
   //Make cost value private because we don't want anyone to reachout our cost value and change it
-  fileprivate var cost: Double? = nil
+  private var cost: Double? = nil
+  
+  init(type: Int, quantity: Int? = nil, addSprinkles: Bool = false){
+    self.type = type
+    self.quantity = quantity
+    self.addSprinkles = addSprinkles
+  }
   
   /// <#Description#>
   /// This function calculates the value of cost for the given order according to the choices
