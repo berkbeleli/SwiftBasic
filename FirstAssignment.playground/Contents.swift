@@ -126,6 +126,32 @@ class News{
     self.init(title: title, description: "Unknown", category: .education, pubDate: "15 Jun 2000", imageUrl: "https://default.jpg") // call the defult init
   }
   
+  /// <#Description#>
+  /// This function gives the Category Type according to choice
+  ///
+  /// ```
+  /// var firstNew = News(title: "Gulf’s Smallest Oil Producer ")
+  /// print(firstNew.getCategoryType()) // Education News
+  /// ```
+  ///
+  /// - Warning: The returned string is not localized
+  /// - Returns: A summary string
+  func getCategoryType() -> String{
+    switch category{
+    case .foreignNews:
+      return "Foreign News"
+    case .education:
+      return "Education News"
+    case .economy:
+      return "Foreign News"
+    case .magazine:
+      return "Magazine News"
+    case .politic:
+      return "Politic News"
+    case .sport:
+      return "Sport News"
+    }
+  }
   
   
   
