@@ -92,3 +92,7 @@ orders.sort{ $0.type < $1.type } // sort our orders array according to their typ
 for index in 0..<orders.count{
   orders[index].calculateCost()
 }
+
+print(orders.count) // printed number of elements in our array
+orders.removeAll() // removed all items in our array
+print(orders.count) // printed number of elements in our array
