@@ -167,3 +167,18 @@ class News{
   func setCategory(_ category: NewsCategory){ self.category = category }
 }
 
+var allNews: [News] = []  // create an array of News to keep our all news
+// Created an instance of News class with default initializer
+var foreignNew = News(
+  title: "Gulf’s Smallest Oil Producer ",
+  description: "Middle Eastern state reviewing energy assets for sales",
+  category: .economy,
+  author: "Anthony Di Paola",
+  pubDate: "16 May 2022",
+  imageUrl: "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i9JATJWbN98I/v0/560x420.jpg")
+allNews.append(foreignNew) // Add our instance of News class to our created allNews array
+// Created another instance of News class with convenience init (we just give title and rest is set through convenience init)
+var defaultNew = News("Default New Type")
+allNews.append(defaultNew)
+allNews.forEach { print($0.getCategoryType()) }
+
