@@ -11,7 +11,6 @@ import UIKit
 //
 
 // MARK: - Definition of CupcakeOrder struct
-
 struct CupcakeOrder{
   static let cakeTypes = ["Vanilla", "Strawberry", "Chocolate", "Rainbow", "Hazelnut"]
   var type: Int
@@ -100,9 +99,18 @@ print(orders.count) // printed number of elements in our array
 //
 // Class Example
 //
-
-enum NewsCategory{ // Created NewsCategory enumeration
+// MARK: - Definition of NewsCategory enum
+enum NewsCategory{
   case foreignNews, education, economy, magazine, politic, sport
 }
-
-
+// MARK: - Definition of News class
+class News{
+  
+  private var title: String
+  var description: String
+  private var category: NewsCategory
+  var author: String?
+  var pubDate: String
+  var imageUrl: String
+  
+}
