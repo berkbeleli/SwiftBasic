@@ -96,3 +96,13 @@ for index in 0..<orders.count{
 print(orders.count) // printed number of elements in our array
 orders.removeAll() // removed all items in our array
 print(orders.count) // printed number of elements in our array
+
+//
+// Class Example
+//
+
+enum NewsCategory{ // Created NewsCategory enumeration
+  case foreignNews, education, economy, magazine, politic, sport
+}
+
+
