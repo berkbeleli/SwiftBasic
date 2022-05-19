@@ -105,12 +105,28 @@ enum NewsCategory{
 }
 // MARK: - Definition of News class
 class News{
-  
+  //Definition of variables
   private var title: String
   var description: String
-  private var category: NewsCategory
+  private var category: NewsCategory // category will be type of NewsCategory enum
   var author: String?
   var pubDate: String
   var imageUrl: String
+  // definition of default initializers
+  init(title: String, description: String, category: NewsCategory, author: String? = "Unknown", pubDate: String, imageUrl: String ){
+    self.title = title
+    self.description = description
+    self.category = category
+    self.author = author
+    self.pubDate = pubDate
+    self.imageUrl = imageUrl
+  }
+  // this initializers let us create an instance with just title value
+  convenience init(_ title:String) {
+    self.init(title: title, description: "Unknown", category: .education, pubDate: "15 Jun 2000", imageUrl: "https://default.jpg") // call the defult init
+  }
+  
+  
+  
   
 }
