@@ -79,6 +79,11 @@ struct CupcakeOrder{
       return "Something went wrong try again"
     }
   }
-  
-  
 }
+
+var orders: [CupcakeOrder] = [] // create an array of CupcakeOrder to keep our all orders
+// create instances of CupcakeOrder struct and append them to our array
+orders.append(CupcakeOrder(type: 2, quantity: 5, addSprinkles: true))
+orders.append(CupcakeOrder(type: 1, quantity: 2, addSprinkles: false))
+orders.append(CupcakeOrder(type: 7, quantity: 6, addSprinkles: true))
+orders.sort{ $0.type < $1.type } // sort our orders array according to their type
