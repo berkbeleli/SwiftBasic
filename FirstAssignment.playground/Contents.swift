@@ -115,6 +115,10 @@ print(orders.count) // printed number of elements in our array
 orders.removeAll() // removed all items in our array
 print(orders.count) // printed number of elements in our array
 
+if orders.isEmpty{
+  print("You don't have any order")
+}
+
 //
 // Class Example
 //
