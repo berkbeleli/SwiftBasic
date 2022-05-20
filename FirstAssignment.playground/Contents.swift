@@ -219,3 +219,7 @@ fierceEnemies["Tom"] = "Jerry" // Adding new dictionary item
 fierceEnemies["Gargamel"] = "Smurfs" // Adding new dictionary item
 fierceEnemies["Megatron"] = "Autobot" // Adding new dictionary item
 print(fierceEnemies["Tom", default: "Unknown"]) // if value of Tom is empty this line will return Unknown
+// Iterate through both keys and values
+for (evil, good) in fierceEnemies {
+  print("\(evil) is the evil character for \(good)")
+}
